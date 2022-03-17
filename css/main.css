@@ -1,0 +1,231 @@
+body{
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ################################################################
+#######      Navbar Styles
+################################################################ */
+.shape{
+    height: 10vh;
+    width: 100%;
+    background-color: black;
+    position:fixed;
+    z-index: 2;
+    clip-path: polygon(50% 0%, 95% 12%, 98% 55%, 95% 100%, 50% 35%, 50% 35%, 5% 100%, 2% 55%, 5% 12%);
+}
+
+.navbar {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+}
+
+
+/* ################################################################
+#######      Header Styles
+################################################################ */
+
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.shadow-container {
+    background-color: rgb(236 197 122 / 11%);
+    width: 90%;
+    box-shadow:  0px 0px 22px 0px rgb(0 0 0 / 75%);
+}
+
+.header-container, .down-arrow {
+    position: absolute;
+    text-align: center;
+}
+
+.header-container{
+    top: 50vh;
+    width: 70%;
+    border-radius:20px;
+    font-size: 2rem;
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.down-arrow{
+    bottom: 2vh;
+    color: black;
+    animation:
+    stretch
+    1.5s
+    ease-out
+    0s
+    alternate
+    infinite
+    none
+    running;
+}
+
+.down-arrow::before {
+    content: "\f13a";
+    display: inline-block;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 2rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+@keyframes stretch {
+    0% {
+        transform: scale(.3);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+video {
+    height: 80vh;
+    width: 90%;
+    object-fit: cover;
+    border-radius: 70% 30% 30% 70%/60% 40% 60% 40%;
+}
+
+/* ################################################################
+#######      Main Styles
+################################################################ */
+
+main {
+    height: 100vh;
+    padding-top: 10vh;
+}
+
+.personal {
+    width: 90%;
+    left: 5%;
+}
+.slick-slide div{
+    width: 100vh;
+}
+
+.slick-active{
+    width: 80vw;
+}
+
+.slick-initialized .slick-slide {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+
+img {
+    width: 45vh;
+    border-radius: 50%;
+    box-shadow: 0px 0px 22px 0px rgb(0 0 0 / 75%);
+}
+
+figure {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption{
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+.slick-next {
+    right: 0;
+    height:2rem;
+    width:2rem;
+}
+.slick-prev {
+    left: 0;
+    height:2rem;
+    width:2rem;
+    z-index: 2;
+}
+
+.slick-next::before{
+    content: '\f138';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 2rem;
+    color: black;
+}
+.slick-prev::before{
+    content: '\f137';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 2rem;
+    color: black;
+}
+
+/* ################################################################
+#######      Footer Styles
+################################################################ */
+
+footer{
+    width: 100%;
+    height: auto;
+    background: linear-gradient(180deg, #fdf9f0 0%, #e29898 100%);
+    border-top-right-radius: 5vw;
+    border-top-left-radius: 5vw;
+}
+
+/* ################################################################
+#######      Media queries
+################################################################ */
+
+
+@media screen and (max-width: 450px) {
+    figure{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    figcaption {
+        font-size: 0.8rem;
+    }
+    img{
+        width: 30vh;
+    }
+
+    video {
+        border-radius: 30%;
+    }
+    .down-arrow::before {
+        font-size: 1rem;
+    }
+    .header-container{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-height: 500px) {
+    figure {
+        flex-direction: row;
+    }
+    figcaption {
+        font-size:0.8rem;
+    }
+}

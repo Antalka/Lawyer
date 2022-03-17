@@ -9,22 +9,44 @@ body{
 #######      Navbar Styles
 ################################################################ */
 .shape{
+    /* display: flex;
+    justify-content: center; */
     height: 10vh;
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
     position:fixed;
     z-index: 2;
+    background:linear-gradient(8deg, rgba(2,0,36,1) 0%, rgba(135,135,245,0.9335084375547094) 35%, rgba(0,212,255,0.3) 100%);
     clip-path: polygon(50% 0%, 95% 12%, 98% 55%, 95% 100%, 50% 35%, 50% 35%, 5% 100%, 2% 55%, 5% 12%);
 }
 
 .navbar {
-    height: 100%;
+    z-index: 2;
+    position: fixed;
+    height: 10vh;
     width: 100%;
     justify-content: center;
     align-items: flex-start;
     padding: 0;
+    filter: drop-shadow(-1px 6px 3px rgba(100, 100, 100, 1));
 }
 
+.nav-list{
+    z-index: 2;
+    height: 8vh;
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+
+.nav-list li{
+    display: inline;
+}
 
 /* ################################################################
 #######      Header Styles
@@ -186,10 +208,24 @@ figcaption{
 footer{
     width: 100%;
     height: auto;
-    background: linear-gradient(180deg, #fdf9f0 0%, #e29898 100%);
+    /* background: linear-gradient(180deg, #fdf9f0 0%, #e29898 100%); */
     border-top-right-radius: 5vw;
     border-top-left-radius: 5vw;
+        /* Created with https://www.css-gradient.com */
+    background: linear-gradient(to bottom, rgba(253, 249, 240, 1.0), rgb(0 96 255 / 68%));
 }
+
+.footer-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer-container ul li{
+    list-style: none;
+    display: inline;
+}
+
 
 /* ################################################################
 #######      Media queries
